@@ -220,9 +220,15 @@ Foidalanuvchi ma'lumotlari:
         <button type="submit" className="submit-button">
           Continue Shipping
         </button>
-      </form>
+        <div className="mabecard">
       <Cart/>
+
+      </div>
+      </form>
+    
     </div>
+    
+  
   );
 }
 

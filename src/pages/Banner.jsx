@@ -47,7 +47,7 @@ function Banner() {
                 <span className="banner-subtitle">Best Furniture For Your Castle....</span>
                 <h1 className="banner-title">{slide.title}</h1>
                 <p className="banner-description">{slide.description}</p>
-                <button className="shop-now-btn"><a href="/Home2" style={{color:'white', textDecoration: 'noneЁ'}}>Shop Now</a></button>
+                <button className="shop-now-btn"><a href="/Home2" style={{color:'white', textDecoration: 'none'}}>Shop Now</a></button>
               </div>
               <div className="banner-image-wrapper">
                 <div className="discount-badge">

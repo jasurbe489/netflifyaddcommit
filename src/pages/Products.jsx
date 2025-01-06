@@ -172,6 +172,7 @@ export default function ProductCarousel() {
           <span key={index} style={styles.indicator}></span>
         ))}
       </div>
+      
     </div>
   );
 }
