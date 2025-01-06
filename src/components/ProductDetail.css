@@ -1,0 +1,201 @@
+/* Umumiy o'rnatmalar */
+
+  
+  .product-detailsk {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 150px;
+    margin: 5% 0;
+  }
+  .product-details:hover{
+    transition: all 
+    3s ease;
+  }
+  
+  .product-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .thumbnails img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    transition: transform 0.2s ease;
+  }
+  
+  .thumbnails img:hover {
+    transform: scale(1.1);
+    border-color: #333;
+  }
+  
+  .product-info {
+    flex: 2;
+  }
+  
+  .product-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .rating {
+    font-size: 14px;
+    color: #ff9800;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .current-price {
+    color: #e53935;
+    font-weight: bold;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+  }
+  
+  .details {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .details p {
+    margin: 5px 0;
+  }
+  
+  .product-tabs-section {
+    margin-top: 30px;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 15px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .tab.active {
+    background-color: #fff;
+    border-color: #333;
+    font-weight: bold;
+  }
+  
+  .tab-content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0 0 5px 5px;
+    background-color: #fff;
+  }
+  
+  .tab-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .more-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .more-details ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .more-details ul li .arrow {
+    margin-right: 10px;
+    color: #e53935;
+    font-weight: bold;
+  }
+  /* O'xshash mahsulotlar */
+.related-products {
+    margin-top: 30px;
+  }
+  
+  .related-products h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .related-product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .related-product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .related-product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .related-product-card p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .related-product-card .ratings {
+    margin-top: 10px;
+  }
+  
+  .related-product-card .star {
+    font-size: 14px;
+    color: #ddd;
+  }
+  
+  .related-product-card .star.filled {
+    color: #f5c518;
+  }
+  

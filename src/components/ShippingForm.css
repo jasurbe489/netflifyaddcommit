@@ -1,0 +1,172 @@
+.shipping-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #FBFBFF;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .shipping-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .shipping-header h2 {
+    color: #151875;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .login-link {
+    font-size: 14px;
+    color: #9096B2;
+  }
+  
+  .login-link a {
+    color: #151875;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .shipping-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    width: 100%;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #E7E6EF;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #151875;
+    background-color: white;
+  }
+  
+  .form-input::placeholder {
+    color: #9096B2;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #151875;
+  }
+  
+  .newsletter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #9096B2;
+    font-size: 14px;
+  }
+  
+  .newsletter-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    accent-color: #151875;
+  }
+  
+  .shipping-title {
+    color: #151875;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .name-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .location-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .submit-button {
+    background-color: #FB2E86;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .submit-button:hover {
+    background-color: #e61a7a;
+  }
+  
+  @media (max-width: 768px) {
+    .shipping-container {
+      padding: 20px;
+    }
+  
+    .shipping-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .name-group,
+    .location-group {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* Add this to your existing ShippingForm.css file */
+
+/* Toast container */
+.Toastify__toast-container {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  /* Toast */
+  .Toastify__toast {
+    background-color: #FBFBFF;
+    color: #151875;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Toast body */
+  .Toastify__toast-body {
+    font-size: 14px;
+  }
+  
+  /* Success toast */
+  .Toastify__toast--success {
+    border-left: 4px solid #4CAF50;
+  }
+  
+  /* Error toast */
+  .Toastify__toast--error {
+    border-left: 4px solid #F44336;
+  }
+  
+  /* Close button */
+  .Toastify__close-button {
+    color: #9096B2;
+  }
+  
+  /* Progress bar */
+  .Toastify__progress-bar {
+    background-color: #FB2E86;
+  }
+  
+  
