@@ -85,8 +85,8 @@ function Navbar() {
               {isHomeDropdownOpen && (
                 <div className="dropdown-menu">
                   <Link to="/" className="dropdown-item">Home 1</Link>
-                  <Link to="/home2" className="dropdown-item">Home 2</Link>
-                  <Link to="/home3" className="dropdown-item">Home 3</Link>
+                  <Link to="/home2" className="dropdown-item">shopping grid</Link>
+                  <Link to="/home3" className="dropdown-item">home 3</Link>
                 </div>
               )}
             </div>

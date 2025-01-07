@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaShoppingCart, FaHeart, FaSearch } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart, FaSearch, FaStar } from 'react-icons/fa';
 import '../components/Home2.css';
 // Import rasmlarni
 import Image1 from '../assets/image1164.png';
@@ -19,20 +19,20 @@ import Image12 from '../assets/badback(1).png';
 const products = [
   {
     id: 1,
-    name: "Vel elit euismod",
+    name: "Accumsan tincidunt",
     price: 26.00,
-    salePrice: 15.00,
+    salePrice: 52.00,
     image: Image2,
-    rating: 3,
+    rating: 5,
     code: "PRD001"
   },
   {
     id: 2,
-    name: "Ultricies condimentum imperdiet",
+    name: "In nulla",
     price: 26.00,
-    salePrice: 25.00,
+    salePrice: 52.00,
     image: Image8,
-    rating: 3,
+    rating: 5,
     code: "PRD002"
   },
   {
@@ -42,6 +42,7 @@ const products = [
     salePrice: 29.00,
     image: Image3,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD003"
   },
   {
@@ -51,6 +52,7 @@ const products = [
     salePrice: 35.00,
     image: Image4,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD004"
   },
   {
@@ -60,6 +62,7 @@ const products = [
     salePrice: 46.00,
     image: Image5,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD005"
   },
   {
@@ -69,6 +72,7 @@ const products = [
     salePrice: 65.00,
     image: Image6,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD006"
   },
   {
@@ -78,6 +82,7 @@ const products = [
     salePrice: 72.00,
     image: Image7,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD007"
   },
   {
@@ -87,6 +92,7 @@ const products = [
     salePrice: 53.00,
     image: Image1,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD008"
   },
   {
@@ -96,6 +102,7 @@ const products = [
     salePrice: 32.00,
     image: Image9,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD009"
   },
   {
@@ -105,6 +112,7 @@ const products = [
     salePrice: 20.00,
     image: Image10,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD010"
   },
   {
@@ -114,6 +122,7 @@ const products = [
     salePrice: 32.00,
     image: Image11,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD011"
   },
   {
@@ -123,9 +132,137 @@ const products = [
     salePrice: 99.00,
     image: Image12,
     rating: 3,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     code: "PRD012"
   }
 ];
+
+const styles = {
+  homeContainer: {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '20px',
+  },
+  header: {
+    marginBottom: '20px',
+  },
+  filterSection: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: '20px',
+    padding: '15px',
+    backgroundColor: '#f5f5f5',
+    borderRadius: '8px',
+  },
+  viewOptions: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+  },
+  viewButton: {
+    background: 'none',
+    border: '1px solid #ddd',
+    padding: '8px',
+    cursor: 'pointer',
+    borderRadius: '4px',
+    display: 'flex',
+    gap: '2px',
+  },
+  activeViewButton: {
+    backgroundColor: '#e0e0e0',
+  },
+  gridView: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+    gap: '20px',
+  },
+  listView: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '30px',
+  },
+  listProduct: {
+    display: 'flex',
+    border: '1px solid #e0e0e0',
+    padding: '20px',
+    borderRadius: '8px',
+    backgroundColor: 'white',
+    transition: 'box-shadow 0.3s ease',
+    gap: '30px',
+  },
+  listProductImage: {
+    flex: '0 0 300px',
+    height: '300px',
+  },
+  listProductDetails: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
+  },
+  productName: {
+    fontSize: '20px',
+    color: '#151875',
+    margin: '0 0 10px 0',
+  },
+  priceRating: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '20px',
+    marginBottom: '15px',
+  },
+  price: {
+    display: 'flex',
+    gap: '10px',
+    alignItems: 'center',
+  },
+  originalPrice: {
+    textDecoration: 'line-through',
+    color: '#151875',
+  },
+  salePrice: {
+    color: '#FB2E86',
+    fontWeight: 'bold',
+  },
+  rating: {
+    display: 'flex',
+    gap: '2px',
+  },
+  star: {
+    color: '#FFC416',
+  },
+  description: {
+    color: '#9295AA',
+    lineHeight: 1.6,
+    margin: '0',
+  },
+  productActions: {
+    display: 'flex',
+    gap: '15px',
+  },
+  actionButton: {
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    color: '#151875',
+    fontSize: '18px',
+    padding: '8px',
+    transition: 'color 0.3s ease',
+  },
+  gridProduct: {
+    border: '1px solid #e0e0e0',
+    padding: '10px',
+    borderRadius: '8px',
+    textAlign: 'center',
+  },
+  productImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    borderRadius: '4px',
+  },
+};
 
 const Home2 = () => {
   const navigate = useNavigate();
@@ -133,6 +270,7 @@ const Home2 = () => {
   const [sortBy, setSortBy] = useState('best-match');
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [searchTerm, setSearchTerm] = useState('');
+  const [viewMode, setViewMode] = useState('grid');
 
   const handleAddToCart = (product, event) => {
     event.stopPropagation();
@@ -165,6 +303,22 @@ const Home2 = () => {
     navigate(`/product/${product.id}`);
   };
 
+  const handleViewModeChange = (mode) => {
+    setViewMode(mode);
+  };
+
+  const renderRatingStars = (rating) => {
+    return [...Array(5)].map((_, index) => (
+      <FaStar 
+        key={index} 
+        style={{
+          ...styles.star,
+          color: index < rating ? '#FFC416' : '#E7E7E7'
+        }}
+      />
+    ));
+  };
+
   useEffect(() => {
     let sorted = [...products];
     if (sortBy === 'price-low') {
@@ -181,90 +335,158 @@ const Home2 = () => {
     setFilteredProducts(filtered);
   }, [sortBy, searchTerm]);
 
+  const renderProduct = (product) => {
+    if (viewMode === 'list') {
+      return (
+        <div 
+          key={product.id} 
+          style={styles.listProduct}
+          onClick={() => handleProductClick(product)}
+        >
+          <div style={styles.listProductImage}>
+            <img 
+              src={product.image} 
+              alt={product.name} 
+              style={styles.productImage}
+            />
+          </div>
+          <div style={styles.listProductDetails}>
+            <h3 style={styles.productName}>{product.name}</h3>
+            <div style={styles.priceRating}>
+              <div style={styles.price}>
+                <span style={styles.originalPrice}>${product.price.toFixed(2)}</span>
+                <span style={styles.salePrice}>${product.salePrice.toFixed(2)}</span>
+              </div>
+              <div style={styles.rating}>
+                {renderRatingStars(product.rating)}
+              </div>
+            </div>
+            <p style={styles.description}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.
+            </p>
+            <div style={styles.productActions}>
+              <button 
+                style={styles.actionButton}
+                onClick={(e) => handleAddToCart(product, e)}
+              >
+                <FaShoppingCart />
+              </button>
+              <button style={styles.actionButton}>
+                <FaHeart />
+              </button>
+              <button style={styles.actionButton}>
+                <FaSearch />
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div 
+        key={product.id} 
+        style={styles.gridProduct}
+        onClick={() => handleProductClick(product)}
+      >
+        <div style={{ position: 'relative' }}>
+          <img 
+            src={product.image} 
+            alt={product.name} 
+            style={styles.productImage}
+          />
+        </div>
+        <div style={{ padding: '10px' }}>
+          <h3 style={styles.productName}>{product.name}</h3>
+          <div style={styles.price}>
+            <span style={styles.originalPrice}>${product.price.toFixed(2)}</span>
+            <span style={styles.salePrice}>${product.salePrice.toFixed(2)}</span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div className="home-container">
-      <div className="home-header">
-        <h1>Ecommerce Accessories & Fashion items</h1>
-        <div className="filter-section">
-          <div className="per-page">
-            Per Page: <input 
+    <div style={styles.homeContainer}>
+      <div style={styles.header}>
+        <h1 style={{color: '#151875'}}>Ecommerce Accessories & Fashion items</h1>
+        <p>About 9,620 results (0.62 seconds)</p>
+        <div style={styles.filterSection}>
+          <div>
+            Per Page: 
+            <input 
               type="number" 
               value={displayCount} 
               onChange={handleDisplayCountChange} 
               min="0"
+              style={{ marginLeft: '10px', width: '60px', padding: '5px' }}
             />
           </div>
-          <div className="sort">
+          <div>
             Sort By: 
-            <select value={sortBy} onChange={handleSortChange}>
+            <select 
+              value={sortBy} 
+              onChange={handleSortChange}
+              style={{ marginLeft: '10px', padding: '5px' }}
+            >
               <option value="best-match">ozining xolati</option>
               <option value="price-low">Narxi arzondan qimatgacha</option>
               <option value="price-high">Narxi qimmatdan arzongacha</option>
             </select>
           </div>
-          <div className="view-options">
+          <div style={styles.viewOptions}>
             View: 
-            <button className="grid-view active">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+            <button 
+              style={{
+                ...styles.viewButton,
+                ...(viewMode === 'grid' ? styles.activeViewButton : {})
+              }}
+              onClick={() => handleViewModeChange('grid')}
+            >
+              <span style={{ width: '8px', height: '8px', backgroundColor: '#666' }}></span>
+              <span style={{ width: '8px', height: '8px', backgroundColor: '#666' }}></span>
+              <span style={{ width: '8px', height: '8px', backgroundColor: '#666' }}></span>
+              <span style={{ width: '8px', height: '8px', backgroundColor: '#666' }}></span>
             </button>
-            <button className="list-view">
-              <span></span>
-              <span></span>
-              <span></span>
+            <button 
+              style={{
+                ...styles.viewButton,
+                ...(viewMode === 'list' ? styles.activeViewButton : {})
+              }}
+              onClick={() => handleViewModeChange('list')}
+            >
+              <span style={{ width: '20px', height: '3px', backgroundColor: '#666', margin: '3px 0' }}></span>
+              <span style={{ width: '20px', height: '3px', backgroundColor: '#666', margin: '3px 0' }}></span>
+              <span style={{ width: '20px', height: '3px', backgroundColor: '#666', margin: '3px 0' }}></span>
             </button>
-            <div className="manny">
+            <div>
               <input 
                 type="text"
                 value={searchTerm}
                 onChange={handleSearchChange}
                 placeholder="Nomi va Narxidan qidiring"
-                className="search-input"
+                style={{
+                  padding: '8px',
+                  width: '200px',
+                  border: '1px solid #ddd',
+                  borderRadius: '4px',
+                  marginLeft: '10px'
+                }}
               />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="products-grid">
-        {filteredProducts.slice(0, displayCount === 0 ? filteredProducts.length : displayCount).map((product) => (
-          <div key={product.id} className="product-card" onClick={() => handleProductClick(product)}>
-            <div className="product-image">
-              <img src={product.image} alt={product.name} />
-              <div className="product-actions">
-                <button 
-                  className="action-button"
-                  onClick={(e) => handleAddToCart(product, e)}
-                >
-                  <FaShoppingCart />
-                </button>
-                <button className="action-button">
-                  <FaHeart />
-                </button>
-                <button className="action-button">
-                  <FaSearch />
-                </button>
-              </div>
-            </div>
-            <div className="product-details">
-              <h3>{product.name}</h3>
-              <div className="rating">
-                {[...Array(product.rating)].map((_, index) => (
-                  <span key={index} className="rating-dot"></span>
-                ))}
-              </div>
-              <div className="price">
-                <span className="original">${product.price.toFixed(2)}</span>
-                <span className="sale">${product.salePrice.toFixed(2)}</span>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div style={viewMode === 'list' ? styles.listView : styles.gridView}>
+        {filteredProducts
+          .slice(0, displayCount === 0 ? filteredProducts.length : displayCount)
+          .map(renderProduct)}
       </div>
     </div>
   );
 };
 
 export default Home2;
+
