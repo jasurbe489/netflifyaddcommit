@@ -1,338 +1,252 @@
+/* Add these styles at the beginning of the file */
 .banner {
-    background-color: #F2F0FF;
-    min-height: calc(100vh - 130px);
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    padding-top: 30px;
-    width: 100%;
-  }
-  
+  background-color: #F2F0FF;
+  min-height: calc(100vh - 130px);
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.banner-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.banner-image-wrapper {
+  flex: 1;
+  position: relative;
+  max-width: 500px;
+}
+
+.image-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgba(236, 210, 250, 0.3);
+}
+
+.banner-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Update the existing styles */
+.banner-subtitle {
+  color: #FB2E86;
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.banner-title {
+  font-size: 3.3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 1rem 0 1.5rem;
+  color: #000;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.banner-description {
+  color: #8A8FB9;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.shop-now-btn {
+  background-color: #FB2E86;
+  color: white;
+  border: none;
+  padding: 0.875rem 2.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: capitalize;
+}
+
+.shop-now-btn:hover {
+  background-color: #e61a75;
+}
+
+.shop-now-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background-color: #00D5FF;
+  color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.discount-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+/* Swiper navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  color: #FB2E86;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #FB2E86;
+  color: white;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
   .banner-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 4rem;
-    position: relative;
+    padding: 0 20px;
   }
   
-  .banner-lamp {
-    position: absolute;
-    left: -180px;
-    top: 0%;
-    transform: translateY(-50%);
-    z-index: 1;
+  .banner-image-wrapper {
+    max-width: 400px;
   }
-  
-  .lamp-image {
-    width: 180px;
-    height: auto;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-  }
-  
-  .banner-content {
-    max-width: 600px;
-    padding: 1rem 0;
-    margin-top: 2rem;
-  }
-  
-  .banner-subtitle {
-    color: #FB2E86;
-    font-size: 16px;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 1rem;
-  }
-  
-  .banner-title {
-    font-size: 53px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 1rem 0 1.5rem;
-    color: #000;
-    font-family: 'Josefin Sans', sans-serif;
-  }
-  
-  .banner-description {
-    color: #8A8FB9;
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    max-width: 80%;
-  }
-  
-  .shop-now-btn {
-    background-color: #FB2E86;
-    color: white;
-    border: none;
-    padding: 0.875rem 2.5rem;
-    border-radius: 2px;
-    font-weight: 600;
-    font-size: 17px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-transform: capitalize;
-  }
-  
-  .shop-now-btn:hover {
-    background-color: #e61a75;
-  }
-  
-  .banner-chair-wrapper {
-    position: relative;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .chair-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: rgba(236, 210, 250, 0.3);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .chair-image {
-    width: 90%;
-    height: auto;
-    object-fit: contain;
-    transform: scale(1.1);
-  }
-  
-  .discount-badge {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    background-color: #00D5FF;
-    color: white;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
+}
+
+@media (max-width: 1024px) {
+  .banner-container {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+    text-align: center;
   }
-  
-  .discount-amount {
+
+  .banner-content,
+  .banner-image-wrapper {
+    max-width: 100%;
+  }
+
+  .banner-description {
+    margin: 0 auto 2rem;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding-top: 20px;
+  }
+
+  .banner-container {
+    padding: 0 15px;
+    gap: 2rem;
+  }
+
+  .banner-content {
+    margin-top: 1rem;
+  }
+
+  .banner-title {
     font-size: 2rem;
-    font-weight: bold;
-    line-height: 1;
   }
-  
-  .discount-text {
+
+  .banner-description {
+    font-size: 14px;
+  }
+
+  .shop-now-btn {
+    padding: 0.75rem 2rem;
+    font-size: 16px;
+  }
+
+  .discount-badge {
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    right: 20px;
+  }
+
+  .discount-amount {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 1.75rem;
+  }
+
+  .banner-subtitle {
+    font-size: 14px;
+  }
+
+  .banner-description {
+    font-size: 12px;
+  }
+
+  .shop-now-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 14px;
+  }
+
+  .discount-badge {
+    width: 60px;
+    height: 60px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .discount-amount {
     font-size: 1.25rem;
-    text-transform: lowercase;
   }
-  
-  .slider-dots {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .slider-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background-color: #FB2E86;
-    opacity: 0.3;
-    cursor: pointer;
-    padding: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .slider-dot.active {
-    opacity: 1;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 1400px) {
-    .banner-lamp {
-      left: 0;
-    }
-  }
-  
-  @media (max-width: 1200px) {
-    .banner-container {
-      padding: 0 20px;
-    }
-    
-    .banner-chair-wrapper {
-      width: 400px;
-      height: 400px;
-    }
-  }
-  
-  @media (max-width: 1024px) {
-    .banner-container {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-  
-    .banner-lamp {
-      display: none;
-    }
-  
-    .banner-content {
-      padding: 1rem;
-    }
-  
-    .banner-description {
-      margin: 0 auto 2rem;
-    }
-  
-    .banner-chair-wrapper {
-      margin: 0 auto;
-      width: 300px;
-      height: 300px;
-    }
-  
-    .banner-title {
-      font-size: 2.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .banner {
-      padding-top: 20px;
-    }
-  
-    .banner-container {
-      padding: 0 15px;
-      gap: 2rem;
-    }
-  
-    .banner-content {
-      margin-top: 1rem;
-    }
-  
-    .banner-title {
-      font-size: 2rem;
-    }
-  
-    .banner-description {
-      font-size: 14px;
-    }
-  
-    .shop-now-btn {
-      padding: 0.75rem 2rem;
-      font-size: 16px;
-    }
-  
-    .banner-chair-wrapper {
-      width: 250px;
-      height: 250px;
-    }
-  
-    .discount-badge {
-      width: 80px;
-      height: 80px;
-      top: 20px;
-      right: 20px;
-    }
-  
-    .discount-amount {
-      font-size: 1.5rem;
-    }
-  
-    .discount-text {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .banner-title {
-      font-size: 1.75rem;
-    }
-  
-    .banner-subtitle {
-      font-size: 14px;
-    }
-  
-    .banner-description {
-      font-size: 12px;
-    }
-  
-    .shop-now-btn {
-      padding: 0.6rem 1.5rem;
-      font-size: 14px;
-    }
-  
-    .banner-chair-wrapper {
-      width: 200px;
-      height: 200px;
-    }
-  
-    .discount-badge {
-      width: 60px;
-      height: 60px;
-      top: 10px;
-      right: 10px;
-    }
-  
-    .discount-amount {
-      font-size: 1.25rem;
-    }
-  
-    .discount-text {
-      font-size: 0.875rem;
-    }
-  }
-  
-  @media (max-width: 375px) {
-    .banner-container {
-      padding: 0 10px;
-    }
-  }
-/* Carousel Navigation Buttons */
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #e0e0e0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: none;
 }
-/* Carousel Navigation Buttons */
-.next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #e0e0e0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: none;
+
+@media (max-width: 375px) {
+  .banner-container {
+    padding: 0 10px;
+  }
 }
+

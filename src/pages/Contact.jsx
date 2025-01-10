@@ -221,7 +221,6 @@ Foidalanuvchi ma'lumotlari:
           Continue Shipping
         </button>
         <div className="mabecard">
-      <Cart/>
 
       </div>
       </form>

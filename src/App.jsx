@@ -10,13 +10,15 @@ import Wishlist from './pages/Wishlist';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home2 from './pages/Home2';
-import Home3 from './pages/Home3';
+import Aboutblog from './pages/Aboutblog';
 import { useState } from 'react';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
 import Footer from './pages/Footer';
 import OrderConfirom from './pages/Orderconfirom';
 import Productdetails from './pages/Productdetails';
+import Aboutus from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 const users = [
   { id: 1, name: 'John Doe', email: 'john@example.com', password: 'password123' }
 ];
@@ -72,9 +74,11 @@ function App() {
         <Route path="/products" element={<Products addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} />} />
         <Route path='/home2' element={<Home2/>}/>
-        <Route path='/home3' element={<Home3/>}/>
+        <Route path='/aboutblog' element={<Aboutblog/>}/>
         <Route path='/orderconfirom' element={<OrderConfirom/>}/>
         <Route path="/product/:id" element={<Productdetails />} />
+        <Route path='/aboutus' element={<Aboutus/>}/>
+        <Route path='/contactus' element={<ContactUs/>}/>
       </Routes>
       {/* <div className="app-container">
       <ToastContainer position="top-right" autoClose={3000} />

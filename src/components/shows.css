@@ -1,0 +1,130 @@
+.product-showcase {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #F2F0FF;
+  }
+  
+  .product-image {
+    flex: 1;
+    position: relative;
+  }
+  
+  .product-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: #FFECF0;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .product-info {
+    flex: 1;
+    padding-left: 40px;
+  }
+  
+  .product-title {
+    font-size: 36px;
+    color: #151875;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .product-features {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  
+  .product-features li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  .product-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .feature-pink::before {
+    background-color: #FF3EB2;
+  }
+  
+  .feature-blue::before {
+    background-color: #2B2BF5;
+  }
+  
+  .feature-green::before {
+    background-color: #2BF5CC;
+  }
+  
+  .product-action {
+    display: flex;
+    align-items: center;
+  }
+  
+  .add-to-cart {
+    background-color: #FB2E86;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #e61a7a;
+  }
+  
+  .product-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-name {
+    font-weight: bold;
+    color: #151875;
+  }
+  
+  .product-price {
+    color: #151875;
+  }
+  
+  @media (max-width: 768px) {
+    .product-showcase {
+      flex-direction: column;
+    }
+  
+    .product-info {
+      padding-left: 0;
+      padding-top: 40px;
+    }
+  
+    .product-title {
+      font-size: 28px;
+    }
+  }
+  
+  

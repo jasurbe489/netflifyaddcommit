@@ -1,28 +1,47 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import './Navbar.css';
 import hekto from '../assets/Hekto.png';
-import { FaEnvelope, FaPhoneAlt, FaUser, FaHeart, FaShoppingCart, FaSearch, FaChevronDown } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaUser, FaHeart, FaShoppingCart, FaSearch, FaChevronDown, FaBars } from 'react-icons/fa';
 
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
   const [cartItemCount, setCartItemCount] = useState(0);
-  
-  
-    useEffect(() => {
-      const updateCartItemCount = () => {
-        const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-        setCartItemCount(cartItems.length);
-      };
-  
-      updateCartItemCount();
-      window.addEventListener('storage', updateCartItemCount);
-  
-      return () => {
-        window.removeEventListener('storage', updateCartItemCount);
-      };
-    }, []);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const updateCartItemCount = () => {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+      setCartItemCount(cartItems.length);
+    };
+
+    updateCartItemCount();
+    window.addEventListener('storage', updateCartItemCount);
+
+    return () => {
+      window.removeEventListener('storage', updateCartItemCount);
+    };
+  }, []);
+
+  useEffect(() => {
+    const closeDropdown = (e) => {
+      if (!e.target.closest('.dropdown')) {
+        setIsHomeDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('click', closeDropdown);
+
+    return () => {
+      document.removeEventListener('click', closeDropdown);
+    };
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className="navbar">
       <div className="top-bar">
@@ -60,8 +79,7 @@ function Navbar() {
             </Link>
             
             <Link to="/cart" className="cart-link">
-                      <FaShoppingCart  />     
-                    
+              <FaShoppingCart />
             </Link>
           </div>
         </div>
@@ -73,7 +91,9 @@ function Navbar() {
             <img src={hekto} alt="Hekto" />
           </Link>
 
-          <nav className="nav-links">
+
+
+          <nav className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''} ${isHomeDropdownOpen ? 'home-dropdown-open' : ''}`}>
             <div className="dropdown">
               <button 
                 className="dropdown-toggle"
@@ -86,7 +106,9 @@ function Navbar() {
                 <div className="dropdown-menu">
                   <Link to="/" className="dropdown-item">Home 1</Link>
                   <Link to="/home2" className="dropdown-item">shopping grid</Link>
-                  <Link to="/home3" className="dropdown-item">home 3</Link>
+                  <Link to="/aboutblog" className="dropdown-item">Blog Page</Link>
+                  <Link to="/aboutus" className="dropdown-item"> About us</Link> 
+                  <Link to="/contactus" className="dropdown-item"> Contact Us</Link>
                 </div>
               )}
             </div>
@@ -106,6 +128,9 @@ function Navbar() {
             />
             <button className="search-button">
               <FaSearch />
+              <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+            <FaBars />
+          </button>
             </button>
           </div>
         </div>

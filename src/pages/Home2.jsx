@@ -239,28 +239,46 @@ const styles = {
   },
   productActions: {
     display: 'flex',
-    gap: '15px',
+    gap: '10px',
   },
   actionButton: {
     background: 'none',
     border: 'none',
     cursor: 'pointer',
-    color: '#151875',
+    color: 'black',
     fontSize: '18px',
-    padding: '8px',
     transition: 'color 0.3s ease',
+    backgroundColor: 'white',
+    borderRadius: '50%',
+    width: '40px',
+    height: '40px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   gridProduct: {
     border: '1px solid #e0e0e0',
     padding: '10px',
     borderRadius: '8px',
     textAlign: 'center',
+    position: 'relative',
+    overflow: 'hidden',
   },
   productImage: {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
     borderRadius: '4px',
+  },
+  productActionsContainer: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    display: 'flex',
+    gap: '10px',
+   
+    transition: 'opacity 0.3s ease',
   },
 };
 
@@ -395,12 +413,26 @@ const Home2 = () => {
             alt={product.name} 
             style={styles.productImage}
           />
+          <div style={styles.productActionsContainer} className="product-actions">
+            <button 
+              style={styles.actionButton}
+              onClick={(e) => handleAddToCart(product, e)}
+            >
+              <FaShoppingCart />
+            </button>
+            <button style={styles.actionButton}>
+              <FaHeart />
+            </button>
+            <button style={styles.actionButton}>
+              <FaSearch />
+            </button>
+          </div>
         </div>
         <div style={{ padding: '10px' }}>
           <h3 style={styles.productName}>{product.name}</h3>
           <div style={styles.price}>
-            <span style={styles.originalPrice}>${product.price.toFixed(2)}</span>
-            <span style={styles.salePrice}>${product.salePrice.toFixed(2)}</span>
+            <span className='sale-price' style={styles.originalPrice}>${product.price.toFixed(2)}</span>
+            <span className='sale-price' style={styles.salePrice}>${product.salePrice.toFixed(2)}</span>
           </div>
         </div>
       </div>
@@ -412,7 +444,7 @@ const Home2 = () => {
       <div style={styles.header}>
         <h1 style={{color: '#151875'}}>Ecommerce Accessories & Fashion items</h1>
         <p>About 9,620 results (0.62 seconds)</p>
-        <div style={styles.filterSection}>
+        <div className='filter-section' style={styles.filterSection}>
           <div>
             Per Page: 
             <input 
@@ -437,7 +469,7 @@ const Home2 = () => {
           </div>
           <div style={styles.viewOptions}>
             View: 
-            <button 
+            <button   
               style={{
                 ...styles.viewButton,
                 ...(viewMode === 'grid' ? styles.activeViewButton : {})
@@ -460,7 +492,7 @@ const Home2 = () => {
               <span style={{ width: '20px', height: '3px', backgroundColor: '#666', margin: '3px 0' }}></span>
               <span style={{ width: '20px', height: '3px', backgroundColor: '#666', margin: '3px 0' }}></span>
             </button>
-            <div>
+            <div className='search-bar'>
               <input 
                 type="text"
                 value={searchTerm}

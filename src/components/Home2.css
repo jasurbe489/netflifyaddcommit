@@ -113,16 +113,7 @@
   object-fit: cover;
 }
 
-.product-actions {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  gap: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+
 
 .product-image:hover .product-actions {
   opacity: 1;
@@ -136,21 +127,11 @@
   text-align: center;
 }
 
-.product-actions {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.action-button{
-  background: white;
-  display: flex;
-  align-items: center;
-}
 
+
+.sale-price{
+  margin-left:26px;
+}
 .product-image:hover .product-actions {
   opacity: 1;
 }
@@ -285,6 +266,15 @@
   margin-bottom: 15px;
 }
 
+@media (max-width: 868px) {
+  .search-bar{
+    flex-direction: column;
+  }
+  .filter-section{
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
 .star {
   color: #ddd;
   font-size: 20px;
@@ -293,6 +283,12 @@
 .star.filled {
   color: #ffd700;
 }
+/* Faqat kerakli stillarni saqlab qolamiz */
+
+
+
+/* Qolgan stillar o'chirildi */
+
 
 .review-count {
   margin-left: 10px;

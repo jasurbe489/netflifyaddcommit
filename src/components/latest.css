@@ -1,0 +1,186 @@
+.ps-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 16px;
+  }
+  
+  .ps-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #151875;
+    margin-bottom: 32px;
+  }
+  
+  .ps-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  
+  .ps-tabs__btn {
+    font-size: 18px;
+    color: #151875;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .ps-tabs__btn:hover,
+  .ps-tabs__btn--active {
+    color: #FB2E86;
+  }
+  
+  .ps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .ps-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .ps-card:hover .ps-card__actions {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .ps-card:hover .ps-card__img {
+    transform: scale(1.05);
+  }
+  
+  .ps-card__badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #3F51B5;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 2px;
+    font-size: 14px;
+    z-index: 10;
+  }
+  
+  .ps-card__badge-link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .ps-card__actions {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 20;
+  }
+  
+  .ps-card__action-btn {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #151875;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+  
+  .ps-card__action-btn:hover {
+    background-color: #FB2E86;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .ps-card__action-btn--favorite {
+    color: #FB2E86;
+  }
+  
+  .ps-card__action-btn--favorite:hover {
+    color: white;
+  }
+  
+  .ps-card__image {
+    aspect-ratio: 1 / 1;
+    background-color: #ffffff;
+    margin-bottom: 16px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .ps-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .ps-card__info {
+    padding: 16px 20px;
+    text-align: left;
+  }
+  
+  .ps-card__name {
+    font-size: 18px;
+    font-weight: 400;
+    color: #151875;
+    margin-bottom: 12px;
+  }
+  
+  .ps-card__price {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .ps-card__price-current {
+    color: #151875;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .ps-card__price-old {
+    color: #FB2E86;
+    text-decoration: line-through;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 768px) {
+    .ps-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  
+    .ps-card {
+      max-width: 300px;
+    }
+    .ps-tabs {
+      flex-wrap: wrap;
+    }
+  }
+  
+  

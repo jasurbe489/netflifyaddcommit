@@ -1,0 +1,137 @@
+@media (max-width: 1200px) {
+    .swiper-container {
+      width: 100%;
+      padding: 0 20px;
+    }
+    
+    .product-card {
+      max-width: 250px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .product-card {
+      max-width: 220px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-carousel h2 {
+      font-size: 20px;
+    }
+    
+    .product-card {
+      max-width: 200px;
+    }
+    
+    .product-card h3 {
+      font-size: 16px;
+    }
+    
+    .product-card p {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .product-carousel h2 {
+      font-size: 18px;
+    }
+    
+    .product-card {
+      max-width: 100%;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+  @media (max-width: 868px) {
+    .container{}
+  }
+  /* Base styles (mobile-first) */
+.product-carousel {
+  padding: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-code {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  color: #2D8C3E;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 20px;
+}
+
+.icon-button:hover {
+  color: #007bff;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1440px) {
+  .product-carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+

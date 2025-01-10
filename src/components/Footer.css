@@ -58,6 +58,12 @@
   color: #8A8FB9;
 }
 
+@media (max-width: 868px) {
+
+  .footer-input-group{
+    flex-direction: column;
+  }
+}
 .footer-button {
   width: 135px;
   height: 44px;

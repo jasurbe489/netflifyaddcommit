@@ -1,0 +1,150 @@
+.asosiy-konteyner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  
+  .sarlavha {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+  }
+  
+  .mahsulotlar-tori {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  
+  @media (min-width: 640px) {
+    .mahsulotlar-tori {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .mahsulotlar-tori {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .mahsulot-kartochka {
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .mahsulot-kartochka:hover {
+    transform: translateY(-4px);
+  }
+  
+  .mahsulot-tugmalar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .mahsulot-kartochka:hover .mahsulot-tugmalar {
+    opacity: 1;
+  }
+  
+  .harakat-tugma {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .harakat-tugma:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+  }
+  
+  .harakat-tugma.tanlangan {
+    color: #ff4d4d;
+  }
+  
+  .mahsulot-rasm-konteyner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .mahsulot-rasm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .mahsulot-kartochka:hover .mahsulot-rasm {
+    transform: scale(1.05);
+  }
+  
+  .mahsulot-malumotlar {
+    text-align: center;
+  }
+  
+  .mahsulot-nomi {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+  
+  .mahsulot-kodi {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .mahsulot-narxi {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a154b;
+  }
+  
+  @keyframes paydobolish {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .mahsulot-kartochka {
+    animation: paydobolish 0.3s ease-in-out;
+  }
+  
+  .mahsulot-kartochka:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  

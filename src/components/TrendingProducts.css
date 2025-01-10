@@ -1,0 +1,311 @@
+.trend-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .trending-title {
+    text-align: center;
+    color: #151875;
+    font-size: 42px;
+    margin-bottom: 40px;
+  }
+  
+  .trend-anordnung {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .haupt-produkte {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    flex: 2;
+  }
+  
+  .produkt-karte {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .produkt-karte:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .produkt-bild {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .produkt-bild img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .produkt-aktionen {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+  
+  .produkt-karte:hover .produkt-aktionen {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .aktion-knopf {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .aktion-knopf:hover {
+    background: #FB2E86;
+    color: white;
+  }
+  
+  .aktion-knopf.favorit {
+    color: #FB2E86;
+  }
+  
+  .produkt-name {
+    color: #151875;
+    margin-bottom: 10px;
+  }
+  
+  .produkt-preis {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .aktueller-preis {
+    color: #151875;
+    font-weight: 600;
+  }
+  
+  .alter-preis {
+    color: #FB2E86;
+    text-decoration: line-through;
+  }
+  
+  .seiten-inhalt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .promo-bereich {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .promo-karte {
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    position: relative;
+    min-height: 200px;
+  }
+  
+  .promo-karte.rosa {
+    background: #FFF6FB;
+    color: #151875;
+  }
+  
+  .promo-karte.lila {
+    background: #EEEFFB;
+    color: #151875;
+  }
+  
+  .shop-link {
+    display: inline-block;
+    color: #FB2E86;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .promo-bild {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    max-width: 40%;
+    height: auto;
+  }
+  
+  .seiten-produkte {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .seiten-produkt-karte {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .seiten-produkt-karte:hover {
+    background: #F6F7FB;
+  }
+  
+  .seiten-produkt-karte img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+  
+  .seiten-produkt-info {
+    flex: 1;
+  }
+  
+  .seiten-produkt-info h4 {
+    color: #151875;
+    margin: 0 0 5px 0;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-inhalt {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+  }
+  
+  .modal-schliessen {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #151875;
+  }
+  
+  .modal-produkt {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .modal-produkt img {
+    width: 300px;
+    height: auto;
+  }
+  
+  .modal-produkt-info {
+    flex: 1;
+  }
+  
+  .modal-preis {
+    margin: 20px 0;
+  }
+  
+  .zum-warenkorb-hinzufuegen {
+    background: #FB2E86;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+/* Media query qo'shilgan */
+@media (max-width: 768px) {
+    .trend-anordnung {
+      flex-direction: column;
+    }
+  
+    .haupt-produkte {
+      grid-template-columns: 1fr;
+    }
+  
+    .promo-bereich {
+      flex-direction: column;
+    }
+  
+    .promo-karte {
+      text-align: center;
+    }
+  
+    .seiten-produkt-karte {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .seiten-produkt-karte img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .modal-produkt {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .modal-produkt img {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .modal-produkt-info {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .trending-title {
+      font-size: 32px;
+    }
+  
+    .produkt-karte {
+      padding: 10px;
+    }
+  
+    .aktion-knopf {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .zum-warenkorb-hinzufuegen {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+  
